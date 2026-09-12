@@ -1,6 +1,6 @@
 # Data-Efficient Multilingual Vision-Language Modeling for Low-Resource Languages
 
-This proect is an empirical study of parameter-efficient (QLoRA) adaptation of a pretrained
+This prjoect is an empirical study of parameter-efficient (QLoRA) adaptation of a pretrained
 multilingual vision-language model to a low-resource language, using Tigrinya
 as a case study.
 
