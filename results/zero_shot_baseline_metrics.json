@@ -1,0 +1,13 @@
+{
+  "note": "raw metrics are primary; normalized removes English instruction-following preamble",
+  "raw": {
+    "text_only":   {"BLEU": 0.281270, "chrF": 6.710586, "ROUGE-L": 0.002778},
+    "image_only":  {"BLEU": 0.006788, "chrF": 1.939094, "ROUGE-L": 0.002434},
+    "image_title": {"BLEU": 0.094597, "chrF": 3.882567, "ROUGE-L": 0.001657}
+  },
+  "normalized": {
+    "text_only":   {"BLEU": 0.423309, "chrF": 6.371951, "ROUGE-L": 0.005622},
+    "image_only":  {"BLEU": 0.009097, "chrF": 2.265200, "ROUGE-L": 0.001389},
+    "image_title": {"BLEU": 0.139185, "chrF": 4.983863, "ROUGE-L": 0.006076}
+  }
+}

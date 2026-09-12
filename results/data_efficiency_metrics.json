@@ -1,0 +1,9 @@
+{
+  "n_test": 288,
+  "results": [
+    {"training_examples": 100,  "val_loss": 3.293035, "BLEU": 1.0110, "chrF": 9.1047, "ROUGE-L": 0.0176, "tigrinya_pct": 78.1389, "mean_repetition": 0.2486},
+    {"training_examples": 500,  "val_loss": 2.892499, "BLEU": 1.0252, "chrF": 6.9415, "ROUGE-L": 0.0226, "tigrinya_pct": 71.1162, "mean_repetition": 0.1464},
+    {"training_examples": 1000, "val_loss": 2.721818, "BLEU": 1.6177, "chrF": 9.2757, "ROUGE-L": 0.0104, "tigrinya_pct": 76.4975, "mean_repetition": 0.1017},
+    {"training_examples": 2440, "val_loss": 2.505815, "BLEU": 1.6831, "chrF": 10.1459, "ROUGE-L": 0.0156, "tigrinya_pct": 76.4862, "mean_repetition": 0.1230}
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "training": {
+    "epochs_run": 3,
+    "val_loss_by_epoch": {"1": 2.5100, "2": 2.4232, "3": 2.4592},
+    "best_epoch": 2,
+    "note": "mild overfitting after epoch 2 motivated the 1-epoch ablation protocol"
+  },
+  "test_metrics": {"BLEU": 2.143814, "chrF": 9.720557, "ROUGE-L": 0.022801}
+}

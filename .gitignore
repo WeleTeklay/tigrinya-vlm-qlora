@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Model checkpoints / adapters
+*.safetensors
+*.bin
+*.pt
+*.pth
+
+# Local Colab outputs
+/content/
+outputs/
+checkpoints/
+gemma3_tigrinya_qlora/
+gemma3_tigrinya_text_only_qlora/
+gemma3_tigrinya_data_efficiency/
+
+# Large generated prediction files (keep small metric summaries instead)
+*_predictions.json
+lamun_tigrinya_zero_shot_baseline.json
+
+# Credentials / environment
+.env
+*.env
+
+# OS
+.DS_Store
