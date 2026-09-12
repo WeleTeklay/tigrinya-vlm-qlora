@@ -118,7 +118,7 @@ of state-of-the-art Tigrinya VLM performance or of reliable visual grounding.
 │   ├── zero_shot_baseline_metrics.json
 │   ├── multimodal_qlora_metrics.json
 │   ├── text_only_qlora_metrics.json
-│   └── data_efficiency_metrics.json
+└──   └── data_efficiency_metrics.json
 ```
 
 ## Reproducing
@@ -128,6 +128,4 @@ and your own Hugging Face token with access to `google/gemma-3-4b-it`. Run
 the notebook top-to-bottom in a fresh runtime (**Restart Runtime → Run All**)
 rather than relying on cached variables from a prior session.
 
-`OUTPUT_DIR` in the configuration cell controls where predictions/checkpoints
-are written — set to `"/content"` for Colab, or a relative folder like
-`"results"` for local/portable runs.
+`OUTPUT_DIR` in the configuration cell controls where predictions/checkpoints are written. It's currently set to `"/content"` , which assumes a Colab runtime — running this notebook elsewhere will require changing that one line to a local/relative folder(e.g. "results") first.
