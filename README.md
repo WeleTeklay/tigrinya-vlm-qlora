@@ -119,7 +119,6 @@ of state-of-the-art Tigrinya VLM performance or of reliable visual grounding.
 │   ├── multimodal_qlora_metrics.json
 │   ├── text_only_qlora_metrics.json
 │   └── data_efficiency_metrics.json
-└── figures/                              # optional: export plots manually if needed
 ```
 
 ## Reproducing
