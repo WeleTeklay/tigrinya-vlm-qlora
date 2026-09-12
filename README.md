@@ -128,4 +128,4 @@ and your own Hugging Face token with access to `google/gemma-3-4b-it`. Run
 the notebook top-to-bottom in a fresh runtime (**Restart Runtime → Run All**)
 rather than relying on cached variables from a prior session.
 
-`OUTPUT_DIR` in the configuration cell controls where predictions/checkpoints are written. It's currently set to `"/content"` , which assumes a Colab runtime — running this notebook elsewhere will require changing that one line to a local/relative folder(e.g. "results") first.
+`OUTPUT_DIR` in the configuration cell controls where predictions/checkpoints are written. It's currently set to `"/content"`, which assumes a Colab runtime — running this notebook elsewhere will require changing that one line to a local/relative folder(e.g. `"results"`) first.
