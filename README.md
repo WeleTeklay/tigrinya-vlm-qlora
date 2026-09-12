@@ -1,6 +1,6 @@
 # Data-Efficient Multilingual Vision-Language Modeling for Low-Resource Languages
 
-An empirical study of parameter-efficient (QLoRA) adaptation of a pretrained
+This proect is an empirical study of parameter-efficient (QLoRA) adaptation of a pretrained
 multilingual vision-language model to a low-resource language, using Tigrinya
 as a case study.
 
@@ -49,32 +49,32 @@ from train/validation at the article level.
 
 ### Zero-shot baseline (raw metrics)
 
-| Condition        | BLEU  | chrF  | ROUGE-L |
-|-------------------|------:|------:|--------:|
-| Text only         | 0.281 | 6.711 | 0.0028  |
-| Image only        | 0.007 | 1.939 | 0.0024  |
-| Image + title     | 0.095 | 3.883 | 0.0017  |
+| Condition     |  BLEU |  chrF | ROUGE-L |
+| ------------- | ----: | ----: | ------: |
+| Text only     | 0.281 | 6.711 |  0.0028 |
+| Image only    | 0.007 | 1.939 |  0.0024 |
+| Image + title | 0.095 | 3.883 |  0.0017 |
 
-*(A post-hoc normalization that strips English instruction-following preamble
+_(A post-hoc normalization that strips English instruction-following preamble
 from generations is also reported in the notebook as a secondary diagnostic;
-it does not change the ranking above.)*
+it does not change the ranking above.)_
 
 ### Main comparison: zero-shot vs. text-only vs. multimodal QLoRA
 
-| Experiment                  | BLEU  | chrF   | ROUGE-L |
-|-------------------------------|------:|-------:|--------:|
-| Zero-shot, image + title       | 0.095 | 3.883  | 0.0017  |
-| Text-only QLoRA                | 1.230 | 7.794  | 0.0023  |
-| **Multimodal QLoRA**           | **2.144** | **9.721** | **0.0228** |
+| Experiment               |      BLEU |      chrF |    ROUGE-L |
+| ------------------------ | --------: | --------: | ---------: |
+| Zero-shot, image + title |     0.095 |     3.883 |     0.0017 |
+| Text-only QLoRA          |     1.230 |     7.794 |     0.0023 |
+| **Multimodal QLoRA**     | **2.144** | **9.721** | **0.0228** |
 
 ### Training-data-size ablation (multimodal QLoRA)
 
-| Training examples | Val. loss | BLEU  | chrF   | ROUGE-L | Tigrinya % | Mean repetition |
-|-------------------:|----------:|------:|-------:|--------:|-----------:|-----------------:|
-| 100                | 3.293     | 1.011 | 9.105  | 0.0176  | 78.14      | 0.249            |
-| 500                | 2.892     | 1.025 | 6.942  | 0.0226  | 71.12      | 0.146            |
-| 1,000              | 2.722     | 1.618 | 9.276  | 0.0104  | 76.50      | 0.102            |
-| 2,440 (full)       | **2.506** | **1.683** | **10.146** | 0.0156  | 76.49      | 0.123            |
+| Training examples | Val. loss |      BLEU |       chrF | ROUGE-L | Tigrinya % | Mean repetition |
+| ----------------: | --------: | --------: | ---------: | ------: | ---------: | --------------: |
+|               100 |     3.293 |     1.011 |      9.105 |  0.0176 |      78.14 |           0.249 |
+|               500 |     2.892 |     1.025 |      6.942 |  0.0226 |      71.12 |           0.146 |
+|             1,000 |     2.722 |     1.618 |      9.276 |  0.0104 |      76.50 |           0.102 |
+|      2,440 (full) | **2.506** | **1.683** | **10.146** |  0.0156 |      76.49 |           0.123 |
 
 ## Findings
 
@@ -101,14 +101,10 @@ of state-of-the-art Tigrinya VLM performance or of reliable visual grounding.
 
 ## Limitations
 
-- Small subset (3,028 examples / 1,768 articles) limits statistical power,
-  especially at 100/500 training examples.
-- Reference captions are news captions, not pure visual descriptions, and
-  are not always fully inferable from the image alone.
-- BLEU/chrF/ROUGE-L measure lexical overlap and do not directly measure
-  visual grounding or factual correctness.
-- Each data-size condition is a single run (one epoch, one seed); results
-  are not averaged over multiple seeds.
+- The Tigrinya subset of LaMuN is small (3,028 examples / 1,768 unique articles), limiting statistical power, especially in the low-data regime (100/500 examples).
+- Reference captions are news captions, not pure visual descriptions — they are not always fully inferable from the image alone, which caps achievable scores on lexical-overlap metrics regardless of model quality.
+- BLEU/chrF/ROUGE-L measure lexical overlap with a single reference and do not directly measure visual grounding or factual correctness.
+- Each data-size condition was trained once (one epoch, one seed) rather than averaged over multiple runs, so the non-monotonic trend across data sizes should be read with that variance in mind.
 
 ## Repository layout
 
